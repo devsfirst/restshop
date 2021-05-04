@@ -1,11 +1,13 @@
 package project.restshop.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class OrderItem {
 
     @Id @GeneratedValue

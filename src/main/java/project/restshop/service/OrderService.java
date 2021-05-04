@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class OrderService {
 
     private final OrderRepository orderRepository;

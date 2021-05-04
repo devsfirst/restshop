@@ -10,12 +10,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class ItemService {
 
     private final ItemRepository itemRepository;
 
+    @Transactional
     public Long save(Item item) {
         itemRepository.save(item);
         return item.getId();
@@ -31,6 +32,7 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
+    @Transactional
     public void delete(Item item) {
         itemRepository.delete(item);
     }
