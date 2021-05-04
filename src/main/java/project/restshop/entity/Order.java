@@ -1,6 +1,7 @@
 package project.restshop.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Getter
+@NoArgsConstructor
 public class Order {
 
     @Id @GeneratedValue
@@ -23,4 +25,8 @@ public class Order {
     private List<OrderItem> orderItems = new ArrayList<>();
 
     private int total;
+
+    public Order(User user) {
+        this.user = user;
+    }
 }
